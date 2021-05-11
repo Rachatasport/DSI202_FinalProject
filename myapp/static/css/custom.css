@@ -1,0 +1,57 @@
+.g-5{
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 0.9fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    'test md5 md7';
+}
+.test{
+    grid-area: test;
+    width: 100%;
+}
+.col-md-5{
+    grid-area: md7;
+    width: 100%;
+}
+.col-md-7{
+    grid-area: md5;
+    width: 100%;
+}
+.testimonials {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+}
+
+.testimonials .testimonials-item img {
+    max-width: 12rem;
+    box-shadow: 0 5px 5px #adb5bd;
+}
+
+.xyz {
+    background: url("/bootstrap5-landing-page-master/img/2.png") no-repeat center center;
+    background-size: cover;
+    padding-top: 25rem;
+    padding-bottom: 25rem;
+}
+.p-1 a:hover{
+    cursor: pointer;
+    color: white !important;
+}
+.shop{
+    margin: 0 !important;
+}
+.shop a h3{
+    width: 100px;
+}
+
+.maintxt {
+    position: relative;
+}
+
+.maintxt > img, .overlay-text {
+    position: absolute;
+}
+
+.overlay-text {
+    padding: 150px 50px;
+}

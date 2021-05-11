@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dsi202 Project</title>
+
+
+    <!-- Font Awesome -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    rel="stylesheet"/>
+    <!-- Google Fonts -->
+    <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    rel="stylesheet"/>
+    <!-- MDB -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css"
+    rel="stylesheet"/>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/custom.css">
+
+</head>
+<body style="background-color: #9dd9a35c;">
+
+    <!-- Navbar  -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #37493d;">
+    
+      <div class="container">
+        <a href="index" img class="">
+          <img class="navbar-brand" src="/static/img/domkan.png"  width="50px;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarToggler">
+          <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+            <li class="nav-item" >
+              <a href="/shop" class="nav-link active" aria-current="page" style="color:white;">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link" style="color:white;">About</a>
+            </li>
+            <li class="nav-item">
+              <a href="#footer" class="nav-link" style="color:white;">Contact</a>
+            </li>
+            <a href="#" img class="">
+              <img class="navbar-brand" src="/static/img/CART ICON.png"  width="50px;"></a>
+            {% if request.user.is_authenticated  %}
+              <a href="/logout" img class="" >
+              <img class="navbar-brand" src="/static/img/logout.png"  width="33px;"></a>            
+              <!-- {% with name="" %}     
+              {% endwith %} -->
+              <div>{{login}}</div>
+            {% else %}
+              <a href="/login" img class="">
+              <img class="navbar-brand" src="/static/img/Login Icon.png"  width="36px;"></a>            
+            {% endif %}
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    
+    
+    <!-- Page Content -->
+  <div class="container" style="padding-bottom: 30px;">
+
+    <div class="row">
+
+      <div class="col-lg-3">
+
+        <h1 class="my-4">Shop > <font size="5">All Product</font> </h1> 
+        <div class="list-group">
+          <a href="/shop" class="btn btn-outline-success mt-1 text-dark"  type="submit" style="color:white;">All Product</a>
+          <a href="/shop_promotion" class="btn btn-outline-success mt-1 text-dark"  type="submit" style="color:white;">Promotion</a>         
+          <a href="/shop_device" class="btn btn-outline-success mt-1 text-dark"  type="submit" style="color:white;">Device</a>
+          <a href="/shop_filler" class="btn btn-outline-success mt-1 text-dark"  type="submit" style="color:white;">Filler</a>
+          <button type="button" class="btn btn-outline btn-success mt-1 text-white" style="color:white;" disabled>Accessories</button>
+        </div>
+
+      </div>
+      <!-- /.col-lg-3 -->
+
+      <div class="col-lg-9 mt-5">
+
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card h-100">
+              <a href="/detail_case_blue"><img class="card-img-top" src="/static/img/charging case blue.png" alt=""></a>
+              <div class="card-body">
+                  <h4 class="card-title">
+                  <a style="color: green;" href="/detail_case_blue">Charging Case (Blue)</a>
+                  </h4>
+                  <h5></h5>
+              </div>
+              <div class="card-footer">
+                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                  <!-- <a href="#" class=" btn float-right btn-outline-success mt-1 text-dark"  type="submit" style="color:white;">650 Baht</a>          -->
+                  <a href="/detail_case_blue" class="btn btn-outline-success float-right" role="button">650 Baht</a>
+              </div>
+              </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+            <a href="/detail_case_red"><img class="card-img-top" src="/static/img/charging case red.png" alt=""></a>
+            <div class="card-body">
+                <h4 class="card-title">
+                <a style="color: green;" href="/detail_case_red">Charging Case (Red)</a>
+                </h4>
+                <h5></h5>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                <!-- <a href="#" class=" btn float-right btn-outline-success mt-1 text-dark"  type="submit" style="color:white;">650 Baht</a>          -->
+                <a href="/detail_case_red" class="btn btn-outline-success float-right" role="button">650 Baht</a>
+              </div>
+              </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+            <a href="/detail_case_pink"><img class="card-img-top" src="/static/img/charging case pink.png" alt=""></a>
+            <div class="card-body">
+                <h4 class="card-title">
+                <a style="color: green;" href="/detail_case_pink">Charging Case (Pink)</a>
+                </h4>
+                <h5></h5>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                <!-- <a href="#" class=" btn float-right btn-outline-success mt-1 text-dark"  type="submit" style="color:white;">650 Baht</a>          -->
+                <a href="/detail_case_pink" class="btn btn-outline-success float-right" role="button">650 Baht</a>
+              </div>
+              </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+            <a href="/detail_case_white"><img class="card-img-top" src="/static/img/charging case white.png" alt=""></a>
+            <div class="card-body">
+                <h4 class="card-title">
+                <a style="color: green;" href="/detail_case_white">Charging Case (White)</a>
+                </h4>
+                <h5></h5>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                <!-- <a href="#" class=" btn float-right btn-outline-success mt-1 text-dark"  type="submit" style="color:white;">650 Baht</a>          -->
+                <a href="/detail_case_white" class="btn btn-outline-success float-right" role="button">650 Baht</a>
+              </div>
+              </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+            <a href="/detail_case_black"><img class="card-img-top" src="/static/img/charging case black.png" alt=""></a>
+            <div class="card-body">
+                <h4 class="card-title">
+                <a style="color: green;" href="/detail_case_black">Charging Case (Black)</a>
+                </h4>
+                <h5></h5>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                <!-- <a href="#" class=" btn float-right btn-outline-success mt-1 text-dark"  type="submit" style="color:white;">650 Baht</a>          -->
+                <a href="/detail_case_black" class="btn btn-outline-success float-right" role="button">650 Baht</a>
+              </div>
+              </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card h-100">
+                <a href="/detail_adaptor"><img class="card-img-top" src="/static/img/adaptor.png" alt=""></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <a style="color: green;" href="/detail_adaptor">Power Adaptor</a>
+                  </h4>
+                  <h5></h5>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                  <a href="/detail_adaptor" class="btn btn-outline-success float-right" role="button">250 Baht</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card h-100">
+                <a href="/detail_usb"><img class="card-img-top" src="/static/img/cable.png" alt=""></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <a style="color: green;" href="/detail_usb">USB Cable</a>
+                  </h4>
+                  <h5></h5>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                  <a href="/detail_usb" class="btn btn-outline-success float-right" role="button">150 Baht</a>
+                    
+                </div>
+              </div>
+            </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <a href="/detail_dock"><img class="card-img-top" src="/static/img/charging dock.png" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a style="color: green;" href="/detail_dock">Charging Dock</a>
+              </h4>
+              <h5></h5>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+              <a href="/detail_dock" class="btn btn-outline-success float-right" role="button">890 Baht</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <a href="/detail_tool"><img class="card-img-top" src="/static/img/cleaning tool.png" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a style="color: green;" href="/detail_tool">Cleaning Tool</a>
+              </h4>
+              <h5></h5>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+              <a href="/detail_tool" class="btn btn-outline-success float-right" role="button">120 Baht</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <a href="/detail_fabric"><img class="card-img-top" src="/static/img/fabric case.png" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a style="color: green;" href="/detail_fabric">Fabric Case</a>
+              </h4>
+              <h5></h5>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+              <a href="/detail_fabric" class="btn btn-outline-success float-right" role="button">350 Baht</a>
+            </div>
+          </div>
+        </div>
+      </div>
+        <!-- /.row -->
+
+      </div>
+      <!-- /.col-lg-9 -->
+      
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+    
+    
+    
+
+
+
+
+
+<!-- Footer -->
+<footer id="footer" class="bg-dark text-center text-white" >
+  <!-- Grid container -->
+  <div class="container-fluid p-4" style="background-color: #37493d;">
+    <!-- Section: Social media -->
+    <section class="mb-3 mt-2">
+      <!-- Facebook -->
+      <a class="btn btn-outline-light btn-floating m-1" href="http://www.facebook.com/" role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/" role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a class="btn btn-outline-light btn-floating m-1" href="http://www.google.co.th/" role="button"
+        ><i class="fab fa-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/" role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/" role="button"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+
+      <!-- Github -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/" role="button"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Form -->
+    <section class="">
+      <form action="">
+        
+        <!--Grid row-->
+      </form>
+    </section>
+    <!-- Section: Form -->
+
+    <!-- Section: Text -->
+    <section class="mb-4">
+      <p style="font-size:110%;">
+        The Next Generation Of Inhaler.
+ Why people still use the same old inhaler ? What do you think of necessary inhaler but in the best  <br>of the best inhaler that you could find is here !! They are necessary for you !
+      </p>
+    </section>
+    <!-- Section: Text -->
+
+    <!-- Section: Links -->
+    <section class="">
+      <!--Grid row-->
+      <div class="row">
+        
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0 mx-auto">
+          <h5 class="text-uppercase">product</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li class="p-1">
+              <a href="/shop" class="text-decoration-none" style="color: #adb5bd;">All product</a>
+            </li>
+            <li class="p-1">
+              <a href="/shop_promotion" class="text-decoration-none" style="color: #adb5bd;">Promotion</a>
+            </li>
+            <li class="p-1">
+              <a href="/shop_device" class="text-decoration-none" style="color: #adb5bd;">Device</a>
+            </li>
+            <li class="p-1">
+              <a href="/shop_filler" class="text-decoration-none" style="color: #adb5bd;">Filler</a>
+            </li>
+            <li class="p-1">
+              <a href="/shop_accessories" class="text-decoration-none" style="color: #adb5bd;">Accessories</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0 mx-auto">
+          <h5 class="text-uppercase">About Dom-kan</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li class="p-1">
+              <a href="/index#1" class="text-decoration-none" style="color: #adb5bd;">Why Cannabis?</a>
+            </li>
+            <li class="p-1">
+              <a href="/index#2" class="text-decoration-none" style="color: #adb5bd;">Our Premium Cannabis Oil</a>
+            </li>
+            <li class="p-1">
+              <a href="/index#3" class="text-decoration-none" style="color: #adb5bd;">Higher Definition Of Inhaler</a>
+            </li>
+            <li class="p-1">
+              <a href="/index#4" class="text-decoration-none" style="color: #adb5bd;">DOM-KAN Essentials</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0 mx-auto">
+          <h5 class="text-uppercase">Customer Support</h5>
+
+          <ul class="list-unstyled mb-0 " >
+            <li class="p-1">
+              <a href="/contact" class="text-decoration-none" style="color: #adb5bd;">Contact Us</a>
+            </li>
+            <li class="p-1">
+              <a href="/track" class="text-decoration-none" style="color: #adb5bd;">Track Order</a>
+            </li>
+            <li class="p-1">
+              <a href="/faq" class="text-decoration-none" style="color: #adb5bd;">FAQ</a>
+            </li>
+          </ul>
+          </ul>
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </section>
+    <!-- Section: Links -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(124, 124, 124, 0.493);">
+    © 2021 Copyright:
+    <a class="text-white" href="#">LEGAL HERB.co</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+   
+    <script src="/static/jquery/jquery.min.js"></script>
+    
+    <script src="/static/js/bootstrap.min.js"></script>
+    
+    
+</body>
+</html>

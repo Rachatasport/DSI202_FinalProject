@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dsi202 Project</title>
+
+
+    <!-- Font Awesome -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    rel="stylesheet"/>
+    <!-- Google Fonts -->
+    <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    rel="stylesheet"/>
+    <!-- MDB -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css"
+    rel="stylesheet"/>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/custom.css">
+
+</head>
+<body style="background-color: #9dd9a35c;;">
+
+    <!-- Navbar  -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #37493d;">
+    
+      <div class="container">
+        <a href="index" img class="">
+          <img class="navbar-brand" src="/static/img/domkan.png"  width="50px;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarToggler">
+          <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+            <li class="nav-item" >
+              <a href="/shop_promotion" class="nav-link active" aria-current="page" style="color:white;">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link" style="color:white;">About</a>
+            </li>
+            <li class="nav-item">
+              <a href="#footer" class="nav-link" style="color:white;">Contact</a>
+            </li>
+            <a href="#" img class="">
+              <img class="navbar-brand" src="/static/img/CART ICON.png"  width="50px;"></a>
+            {% if request.user.is_authenticated  %}
+              <a href="/logout" img class="" >
+              <img class="navbar-brand" src="/static/img/logout.png"  width="33px;"></a>            
+              <!-- {% with name="" %}     
+              {% endwith %} -->
+              <div>{{login}}</div>
+            {% else %}
+              <a href="/login" img class="">
+              <img class="navbar-brand" src="/static/img/Login Icon.png"  width="36px;"></a>            
+            {% endif %}
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <header>
+        <div class="container">
+        <main>
+          <div class="pt-5 pb-4 text-center">
+            <h1>Check Out</h1>
+            <hr class="featurette-divider" style="opacity: 0;  filter: alpha(opacity=40);" >
+            <!-- <p class="lead">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p> -->
+          </div>
+      
+          <div class="row g-5">
+            <div class="test"></div>
+            <div class="col-md-5 col-lg-3 order-md-last">
+              <h4 class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-success">YOUR ORDER</span>
+              </h4>
+              <ul class="list-group mb-3">
+                <li class="list-group-item d-flex justify-content-between lh-sm">
+                  <div>
+                    <h6 class="my-0">SMART INHALER</h6>
+                  </div>
+                  <span class="text-muted">890</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-sm">
+                  <div>
+                    <h6 class="my-0">SHIPPING</h6>
+                  </div>
+                  <span class="text-muted">FREE</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  <span>Total</span>
+                  <strong>890</strong>
+                </li>
+              </ul>
+      
+              <form class="card p-2">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Promo code">
+                  <button type="submit" class="btn btn-success">Redeem</button>
+                </div>
+              </form>
+            </div>
+            <div class="col-md-7 col-sm-8">
+              <h4 class="mb-3">1. Personal Information</h4>
+              <form class="needs-validation" novalidate>
+                <div class="row g-3">
+                  <div class="col-sm-6">
+                    <label for="firstName" class="form-label">First name</label>
+                    <input type="text" class="form-control" id="firstName" placeholder="Elon" value="" required>
+                    <div class="invalid-feedback">
+                      Valid first name is required.
+                    </div>
+                  </div>
+      
+                  <div class="col-sm-6">
+                    <label for="lastName" class="form-label">Last name</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="Musk" value="" required>
+                    <div class="invalid-feedback">
+                      Valid last name is required.
+                    </div>
+                  </div>
+      
+                  <!-- <div class="col-12">
+                    <label for="username" class="form-label">Username</label>
+                    <div class="input-group has-validation">
+                      <span class="input-group-text">@</span>
+                      <input type="text" class="form-control" id="username" placeholder="Username" required>
+                    <div class="invalid-feedback">
+                        Your username is required.
+                      </div>
+                    </div>
+                  </div> -->
+      
+      
+                  <div class="col-12">
+                    <label for="address" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="address" placeholder="12/34 st" required>
+                    <div class="invalid-feedback">
+                      Please enter your shipping address.
+                    </div>
+                  </div>
+      
+      
+                  <div class="col-md-6">
+                    <label for="country" class="form-label">Country</label>
+                    <select class="form-select" id="country" required>
+                      <option value="">Choose...</option>
+                      <option>Thailand</option>
+                      <option>United States</option>
+                    </select>
+                    <div class="invalid-feedback">
+                      Please select a valid country.
+                    </div>
+                  </div>
+      
+                  <div class="col-md-6">
+                      <label for="PostalCode" class="form-label">Postal Code</label>
+                      <input type="text" class="form-control" id="PostalCode" placeholder="10001" required="">
+                      <div class="invalid-feedback">
+                        Postal Code required.
+                      </div>
+                    </div>
+      
+                  <div class="col-md-12">
+                    <label for="MobileNumber" class="form-label">Mobile Number</label>
+                    <input type="text" class="form-control" id="MobileNumber" placeholder="0123456789" required>
+                    <div class="invalid-feedback">
+                      Mobile Number required.
+                    </div>
+                  </div>
+                </div>
+      
+                <br></br>
+      
+                <h4 class="mb-3">2. Payment</h4>
+      
+                  <div class="col-sm-6">
+                      <label for="/paymentMethod" class="form-label"></label>
+                      <select class="form-select" id="/paymentMethod" required>
+                        <option value="">Choose Payment</option>
+                        <option>Paypal</option>
+                        <option>Mastercard</option>
+                        <option>Credit Card</option>
+                      </select>
+                      <div class="invalid-feedback">
+                        Please select a payment method.
+                      </div>
+                    </div>
+      
+                    <div class="row gy-3">
+                      <div class="col-md-12">
+                          <label for="cc-number" class="form-label">Credit Card Number</label>
+                          <input type="text" class="form-control" id="cc-number" placeholder="0000-0000-0000-0000" required>
+                          <div class="invalid-feedback">
+                              Credit Card Number is required
+                          </div>
+                      </div>
+      
+                      <div class="col-md-6">
+                          <label for="SecurityCode" class="form-label">Security Code</label>
+                          <input type="text" class="form-control" id="SecurityCode" placeholder="***" required="">
+                          <div class="invalid-feedback">
+                            Security code required
+                          </div>
+                        </div>
+      
+                      <div class="col-md-6">
+                        <label for="cc-cvv" class="form-label">CVV</label>
+                        <input type="text" class="form-control" id="cc-cvv" placeholder="MM/YY" required>
+                        <div class="invalid-feedback">
+                          Security code required
+                        </div>
+                        </div>
+                    </div>
+      
+              <hr class="my-4">
+                <!-- <button class="w-100 btn btn-success btn-lg" type="submit">Complete Purchased</button> -->
+                <a href="/success" class="w-100 btn-lg btn-success text-center" style=" text-decoration: none " type="submit">Complete Purchased</a>
+              </form>
+            </div>
+          </div>
+        </main>
+    </header>
+
+    <hr class="featurette-divider" style="opacity: 0;  filter: alpha(opacity=40);" >
+    <hr class="featurette-divider" style="opacity: 0;  filter: alpha(opacity=40);" >
+
+<!-- Footer -->
+<footer id="footer" class="bg-dark text-center text-white" >
+  <!-- Grid container -->
+  <div class="container-fluid p-4" style="background-color: #37493d;">
+    <!-- Section: Social media -->
+    <section class="mb-3 mt-2">
+      <!-- Facebook -->
+      <a class="btn btn-outline-light btn-floating m-1" href="http://www.facebook.com/" role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/" role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a class="btn btn-outline-light btn-floating m-1" href="http://www.google.co.th/" role="button"
+        ><i class="fab fa-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/" role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/" role="button"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+
+      <!-- Github -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/" role="button"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Form -->
+    <section class="">
+      <form action="">
+        
+        <!--Grid row-->
+      </form>
+    </section>
+    <!-- Section: Form -->
+
+    <!-- Section: Text -->
+    <section class="mb-4">
+      <p style="font-size:110%;">
+        The Next Generation Of Inhaler.
+ Why people still use the same old inhaler ? What do you think of necessary inhaler but in the best  <br>of the best inhaler that you could find is here !! They are necessary for you !
+      </p>
+    </section>
+    <!-- Section: Text -->
+
+    <!-- Section: Links -->
+    <section class="">
+      <!--Grid row-->
+      <div class="row">
+        
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0 mx-auto">
+          <h5 class="text-uppercase">product</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li class="p-1">
+              <a href="/shop" class="text-decoration-none" style="color: #adb5bd;">All product</a>
+            </li>
+            <li class="p-1">
+              <a href="/shop_promotion" class="text-decoration-none" style="color: #adb5bd;">Promotion</a>
+            </li>
+            <li class="p-1">
+              <a href="/shop_device" class="text-decoration-none" style="color: #adb5bd;">Device</a>
+            </li>
+            <li class="p-1">
+              <a href="/shop_filler" class="text-decoration-none" style="color: #adb5bd;">Filler</a>
+            </li>
+            <li class="p-1">
+              <a href="/shop_accessories" class="text-decoration-none" style="color: #adb5bd;">Accessories</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0 mx-auto">
+          <h5 class="text-uppercase">About Dom-kan</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li class="p-1">
+              <a href="/index#1" class="text-decoration-none" style="color: #adb5bd;">Why Cannabis?</a>
+            </li>
+            <li class="p-1">
+              <a href="/index#2" class="text-decoration-none" style="color: #adb5bd;">Our Premium Cannabis Oil</a>
+            </li>
+            <li class="p-1">
+              <a href="/index#3" class="text-decoration-none" style="color: #adb5bd;">Higher Definition Of Inhaler</a>
+            </li>
+            <li class="p-1">
+              <a href="/index#4" class="text-decoration-none" style="color: #adb5bd;">DOM-KAN Essentials</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0 mx-auto">
+          <h5 class="text-uppercase">Customer Support</h5>
+
+          <ul class="list-unstyled mb-0 " >
+            <li class="p-1">
+              <a href="/contact" class="text-decoration-none" style="color: #adb5bd;">Contact Us</a>
+            </li>
+            <li class="p-1">
+              <a href="/track" class="text-decoration-none" style="color: #adb5bd;">Track Order</a>
+            </li>
+            <li class="p-1">
+              <a href="/faq" class="text-decoration-none" style="color: #adb5bd;">FAQ</a>
+            </li>
+          </ul>
+          </ul>
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </section>
+    <!-- Section: Links -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(124, 124, 124, 0.493);">
+    © 2021 Copyright:
+    <a class="text-white" href="#">LEGAL HERB.co</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+   
+    <script src="/static/jquery/jquery.min.js"></script>
+    
+    <script src="/static/js/bootstrap.min.js"></script>
+    
+    
+</body>
+</html>

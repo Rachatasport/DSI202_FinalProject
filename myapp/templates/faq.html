@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    rel="stylesheet"/>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/custom.css">
+    <script src="/static/js/bootstrap.min.js"></script>
+
+</head>
+    <style>
+        a.btn-outline-light{
+            border-radius: 50%;
+        }
+    </style>
+<body style="background-color: #9dd9a35c;;">
+    <!-- Navbar  -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #37493d;">
+    
+        <div class="container">
+          <a href="index" img class="">
+            <img class="navbar-brand" src="/static/img/domkan.png"  width="50px;"></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <div class="collapse navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+              <li class="nav-item" >
+                <a href="/shop" class="nav-link active" aria-current="page" style="color:white;">Shop</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link" style="color:white;">About</a>
+              </li>
+              <li class="nav-item">
+                <a href="#footer" class="nav-link" style="color:white;">Contact</a>
+              </li>
+              <a href="#" img class="">
+                <img class="navbar-brand" src="/static/img/CART ICON.png"  width="50px;"></a>
+            {% if request.user.is_authenticated  %}
+              <a href="/logout" img class="" >
+              <img class="navbar-brand" src="/static/img/logout.png"  width="33px;"></a>            
+              <!-- {% with name="" %}     
+              {% endwith %} -->
+              <div>{{login}}</div>
+            {% else %}
+              <a href="/login" img class="">
+              <img class="navbar-brand" src="/static/img/Login Icon.png"  width="36px;"></a>            
+            {% endif %}
+              
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+    <h1 class="text-center my-5" >FAQ.</h1>
+    <div class="container py-3 mb-5" style="height: 812px;"> 
+      <div class="row">
+          <div class="col-10 mx-auto">
+              <div class="accordion" id="/faqExample">
+                  <div class="card mb-3">
+                      <div class="card-header p-2" id="headingOne">
+                          <h5 class="mb-0">
+                              <button class="btn btn-link text-success " type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                  Q: Is it legal in Thailand?
+                              </button>
+                          </h5>
+                      </div>
+  
+                      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#faqExample">
+                          <div class="card-body">
+                              <b>Answer:</b> We use the extract of cannabis leaf without any attach to the flower of the plant, so it officaily legal.
+                          </div>
+                      </div>
+                  </div>
+                  <div class="card mb-3">
+                      <div class="card-header p-2" id="headingTwo">
+                          <h5 class="mb-0">
+                              <button class="btn btn-link text-success collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                  Q: How long does the battery last?
+                              </button>
+                          </h5>
+                      </div>
+                  
+                      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqExample">
+                          <div class="card-body">
+                              <b>Answer:</b> If charge for 10 mins, it will last for 3 days.
+                          </div>
+                      </div>
+                  </div>
+                  <div class="card mb-3">
+                      <div class="card-header p-2" id="headingThree">
+                          <h5 class="mb-0">
+                              <button class="btn btn-link text-success collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                  Q. Does it have just one smell?
+                              </button>
+                          </h5>
+                      </div>
+                      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqExample">
+                          <div class="card-body">
+                              <b>Answer:</b> Yes, for now. For the future plan they will definitely have more scent.
+                          </div>
+                      </div>
+                  </div>
+                  <div class="card mb-3">
+                      <div class="card-header p-2" id="headingFive">
+                          <h5 class="mb-0">
+                              <button class="btn btn-link text-success collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseThree">
+                                  Q. Will it be safe for use?
+                              </button>
+                          </h5>
+                      </div>
+                      <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#faqExample">
+                          <div class="card-body">
+                              <b>Answer:</b> Yes, every single step are verify by expertise researcher of cannabis.
+                          </div>
+                      </div>
+                  </div>
+                  <div class="card mb-3">
+                      <div class="card-header p-2" id="headingFour">
+                          <h5 class="mb-0">
+                              <button class="btn btn-link text-success" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseOne">
+                                  Q: How it help for my health care?
+                              </button>
+                          </h5>
+                      </div>
+                      <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#faqExample">
+                          <div class="card-body">
+                              <b>Answer:</b> Help you to sleep better and get you to the deep sleep. So you won't be waking up tired!.
+                          </div>
+                      </div>
+                  </div>
+                  <div class="card mb-3">
+                      <div class="card-header p-2" id="headingsix">
+                          <h5 class="mb-0">
+                              <button class="btn btn-link text-success" type="button" data-toggle="collapse" data-target="#collapsesix" aria-expanded="true" aria-controls="collapseOne">
+                                  Q: Is it waterproof?
+                              </button>
+                          </h5>
+                      </div>
+  
+                      <div id="collapsesix" class="collapse" aria-labelledby="headingsix" data-parent="#faqExample">
+                          <div class="card-body">
+                              <b>Answer:</b> No, it is not waterproof and FYI if the device got into the water and it is not function anymore, we will not give any refund due to this conditon of breaking.
+                          </div>
+                      </div>
+                  </div>
+                  <div class="card mb-3">
+                      <div class="card-header p-2" id="headingSeven">
+                          <h5 class="mb-0">
+                              <button class="btn btn-link text-success" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="true" aria-controls="collapseOne">
+                                  Q: How do I know that it is already charge?
+                              </button>
+                          </h5>
+                      </div>
+  
+                      <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#faqExample">
+                          <div class="card-body">
+                              <b>Answer:</b> The light will turn on after the charge.
+                          </div>
+                      </div>
+                  </div>
+                  <div class="card mb-3">
+                      <div class="card-header p-2" id="headingEight">
+                          <h5 class="mb-0">
+                              <button class="btn btn-link text-success" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="true" aria-controls="collapseOne">
+                                  Q: What is the best way to store this inhaler?
+                              </button>
+                          </h5>
+                      </div>
+  
+                      <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#faqExample">
+                          <div class="card-body">
+                              <b>Answer:</b> Put in the charging case so that the inhaler will be fully charge during the day and night.
+                          </div>
+                      </div>
+                  </div>
+                  <div class="card mb-3">
+                      <div class="card-header p-2" id="headingNine">
+                          <h5 class="mb-0">
+                              <button class="btn btn-link text-success" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="true" aria-controls="collapseOne">
+                                  Q: Can I get a refill for the inhaler?
+                              </button>
+                          </h5>
+                      </div>
+  
+                      <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#faqExample">
+                          <div class="card-body">
+                              <b>Answer:</b> Yes, you can go back to the shopping page to <a class="text-success" href="/shop_filler">buy one!</a> .
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!--/row-->
+    </div>
+    <!--container-->
+    
+
+
+
+<!-- Footer -->
+<footer id="footer" class="bg-dark text-center text-white" >
+  <!-- Grid container -->
+  <div class="container-fluid p-4" style="background-color: #37493d;">
+    <!-- Section: Social media -->
+    <section class="mb-3 mt-2">
+      <!-- Facebook -->
+      <a class="btn btn-outline-light btn-floating m-1" href="http://www.facebook.com/" role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/" role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a class="btn btn-outline-light btn-floating m-1" href="http://www.google.co.th/" role="button"
+        ><i class="fab fa-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/" role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/" role="button"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+
+      <!-- Github -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/" role="button"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Form -->
+    <section class="">
+      <form action="">
+        
+        <!--Grid row-->
+      </form>
+    </section>
+    <!-- Section: Form -->
+
+    <!-- Section: Text -->
+    <section class="mb-4">
+      <p style="font-size:110%;">
+        The Next Generation Of Inhaler.
+ Why people still use the same old inhaler ? What do you think of necessary inhaler but in the best  <br>of the best inhaler that you could find is here !! They are necessary for you !
+      </p>
+    </section>
+    <!-- Section: Text -->
+
+    <!-- Section: Links -->
+    <section class="">
+      <!--Grid row-->
+      <div class="row">
+        
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0 mx-auto">
+          <h5 class="text-uppercase">product</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li class="p-1">
+              <a href="/shop" class="text-decoration-none" style="color: #adb5bd;">All product</a>
+            </li>
+            <li class="p-1">
+              <a href="/shop_promotion" class="text-decoration-none" style="color: #adb5bd;">Promotion</a>
+            </li>
+            <li class="p-1">
+              <a href="/shop_device" class="text-decoration-none" style="color: #adb5bd;">Device</a>
+            </li>
+            <li class="p-1">
+              <a href="/shop_filler" class="text-decoration-none" style="color: #adb5bd;">Filler</a>
+            </li>
+            <li class="p-1">
+              <a href="/shop_accessories" class="text-decoration-none" style="color: #adb5bd;">Accessories</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0 mx-auto">
+          <h5 class="text-uppercase">About Dom-kan</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li class="p-1">
+              <a href="/index#1" class="text-decoration-none" style="color: #adb5bd;">Why Cannabis?</a>
+            </li>
+            <li class="p-1">
+              <a href="/index#2" class="text-decoration-none" style="color: #adb5bd;">Our Premium Cannabis Oil</a>
+            </li>
+            <li class="p-1">
+              <a href="/index#3" class="text-decoration-none" style="color: #adb5bd;">Higher Definition Of Inhaler</a>
+            </li>
+            <li class="p-1">
+              <a href="/index#4" class="text-decoration-none" style="color: #adb5bd;">DOM-KAN Essentials</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0 mx-auto">
+          <h5 class="text-uppercase">Customer Support</h5>
+
+          <ul class="list-unstyled mb-0 " >
+            <li class="p-1">
+              <a href="/contact" class="text-decoration-none" style="color: #adb5bd;">Contact Us</a>
+            </li>
+            <li class="p-1">
+              <a href="/track" class="text-decoration-none" style="color: #adb5bd;">Track Order</a>
+            </li>
+            <li class="p-1">
+              <a href="/faq" class="text-decoration-none" style="color: #adb5bd;">FAQ</a>
+            </li>
+          </ul>
+          </ul>
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </section>
+    <!-- Section: Links -->
+  </div>
+  <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(124, 124, 124, 0.493);">
+      © 2021 Copyright:
+      <a class="text-white" href="#">LEGAL HERB.co</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    </style>
+    <!-- Font Awesome -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    rel="stylesheet"/>
+    <link rel="stylesheet" href="/static/css/track.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body style="background-color: rgb(118 239 119 / 26%);">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #37493d;">
+    
+        <div class="container">
+          <a href="index" img class="">
+            <img class="navbar-brand" src="/static/img/domkan.png"  width="50px;"></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <div class="collapse navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+              <li class="nav-item" >
+                <a href="/shop" class="nav-link active" aria-current="page" style="color:white;">Shop</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link" style="color:white;">About</a>
+              </li>
+              <li class="nav-item">
+                <a href="#footer" class="nav-link" style="color:white;">Contact</a>
+              </li>
+              <a href="#" img class="">
+                <img class="navbar-brand" src="/static/img/CART ICON.png"  width="50px;"></a>
+            {% if request.user.is_authenticated  %}
+              <a href="/logout" img class="" >
+              <img class="navbar-brand" src="/static/img/logout.png"  width="33px;"></a>            
+              <!-- {% with name="" %}     
+              {% endwith %} -->
+              <div>{{login}}</div>
+            {% else %}
+              <a href="/login" img class="">
+              <img class="navbar-brand" src="/static/img/Login Icon.png"  width="36px;"></a>            
+            {% endif %}
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+        
+    <div class="container px-1 px-md-4 py-5 mx-auto my-5" style="background-color: rgb(118 239 119 / 26%); ">
+        <div class="card" style="background-color: #f8f9fa; border-radius: 20px;">
+            <div class="row d-flex justify-content-between px-3 top">
+                <div class="d-flex" style="position: relative; left: 10%">
+                    <h5 class="p-3">ORDER <span class="text-success font-weight-bold" >#Y34XDHR</span></h5>
+                </div>
+                <div class="d-flex flex-column text-sm-right" style=" position: relative; right:10%">
+                    <p class="mb-0">Expected Arrival <span>01/12/19</span></p>
+                    <p>USPS <span class="font-weight-bold">234094567242423422898</span></p>
+                </div>
+            </div> <!-- Add class 'active' to progress -->
+            <div class="row d-flex justify-content-center">
+                <div class="col-12">
+                    <ul id="progressbar" class="text-center">
+                        <li class="active step0"></li>
+                        <li class="active step0"></li>
+                        <li class="active step0"></li>
+                        <li class="step0"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row justify-content-between top">
+                <div class="row d-flex icon-content"> <img class="icon" src="/static/img/9nnc9Et.png">
+                    <div class="d-flex flex-column">
+                        <p class="font-weight-bold">Order<br>Processed</p>
+                    </div>
+                </div>
+                <div class="row d-flex icon-content"> <img class="icon" src="/static/img/u1AzR7w.png">
+                    <div class="d-flex flex-column">
+                        <p class="font-weight-bold">Order<br>Shipped</p>
+                    </div>
+                </div>
+                <div class="row d-flex icon-content"> <img class="icon" src="/static/img/TkPm63y.png">
+                    <div class="d-flex flex-column">
+                        <p class="font-weight-bold">Order<br>En Route</p>
+                    </div>
+                </div>
+                <div class="row d-flex icon-content"> <img class="icon" src="/static/img/HdsziHP.png">
+                    <div class="d-flex flex-column">
+                        <p class="font-weight-bold">Order<br>Arrived</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- Footer -->
+<footer id="footer" class="bg-dark text-center text-white" >
+  <!-- Grid container -->
+  <div class="container-fluid p-4" style="background-color: #37493d;">
+    <!-- Section: Social media -->
+    <section class="mb-3 mt-2">
+      <!-- Facebook -->
+      <a class="btn btn-outline-light btn-floating m-1" href="http://www.facebook.com/" role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/" role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a class="btn btn-outline-light btn-floating m-1" href="http://www.google.co.th/" role="button"
+        ><i class="fab fa-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/" role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/" role="button"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+
+      <!-- Github -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/" role="button"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Form -->
+    <section class="">
+      <form action="">
+        
+        <!--Grid row-->
+      </form>
+    </section>
+    <!-- Section: Form -->
+
+    <!-- Section: Text -->
+    <section class="mb-4">
+      <p style="font-size:110%;">
+        The Next Generation Of Inhaler.
+ Why people still use the same old inhaler ? What do you think of necessary inhaler but in the best  <br>of the best inhaler that you could find is here !! They are necessary for you !
+      </p>
+    </section>
+    <!-- Section: Text -->
+
+    <!-- Section: Links -->
+    <section class="">
+      <!--Grid row-->
+      <div class="row">
+        
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0 mx-auto">
+          <h5 class="text-uppercase">product</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li class="p-1">
+              <a href="/shop" class="text-decoration-none" style="color: #adb5bd;">All product</a>
+            </li>
+            <li class="p-1">
+              <a href="/shop_promotion" class="text-decoration-none" style="color: #adb5bd;">Promotion</a>
+            </li>
+            <li class="p-1">
+              <a href="/shop_device" class="text-decoration-none" style="color: #adb5bd;">Device</a>
+            </li>
+            <li class="p-1">
+              <a href="/shop_filler" class="text-decoration-none" style="color: #adb5bd;">Filler</a>
+            </li>
+            <li class="p-1">
+              <a href="/shop_accessories" class="text-decoration-none" style="color: #adb5bd;">Accessories</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0 mx-auto">
+          <h5 class="text-uppercase">About Dom-kan</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li class="p-1">
+              <a href="/index#1" class="text-decoration-none" style="color: #adb5bd;">Why Cannabis?</a>
+            </li>
+            <li class="p-1">
+              <a href="/index#2" class="text-decoration-none" style="color: #adb5bd;">Our Premium Cannabis Oil</a>
+            </li>
+            <li class="p-1">
+              <a href="/index#3" class="text-decoration-none" style="color: #adb5bd;">Higher Definition Of Inhaler</a>
+            </li>
+            <li class="p-1">
+              <a href="/index#4" class="text-decoration-none" style="color: #adb5bd;">DOM-KAN Essentials</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0 mx-auto">
+          <h5 class="text-uppercase">Customer Support</h5>
+
+          <ul class="list-unstyled mb-0 " >
+            <li class="p-1">
+              <a href="/contact" class="text-decoration-none" style="color: #adb5bd;">Contact Us</a>
+            </li>
+            <li class="p-1">
+              <a href="/track" class="text-decoration-none" style="color: #adb5bd;">Track Order</a>
+            </li>
+            <li class="p-1">
+              <a href="/faq" class="text-decoration-none" style="color: #adb5bd;">FAQ</a>
+            </li>
+          </ul>
+          </ul>
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </section>
+    <!-- Section: Links -->
+  </div>
+  <!-- Grid container -->
+      
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(124, 124, 124, 0.493);">
+          © 2021 Copyright:
+          <a class="text-white" href="#">LEGAL HERB.co</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+  <!-- Footer -->
+</body>
+</html>
