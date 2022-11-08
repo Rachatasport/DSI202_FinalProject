@@ -1,1 +1,3 @@
 # DSI202_FinalProject
+Name Subject : FULL STACK SOFTWARE DEVELOPMENT
+Since March 2021 - May 2021
